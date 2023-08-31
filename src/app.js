@@ -32,7 +32,7 @@ app.delete('/:id',(req,res,next)=>{
     const item = myData
     const itemIndex = item.findIndex(item => item.id===itemId)
         if(itemId === -1){
-            res.status(404)._construct('Item not found')
+            res.status(404).send('Item not found')
             return
         }
         item.splice(itemId,1)
